@@ -1,0 +1,19 @@
+javascript:(function() {
+    var searchTerms = ["1105"]; // Inserisci qui i testi da cercare
+    var elements = document.querySelectorAll('body *');
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var matched = false;
+        for (var j = 0; j < searchTerms.length; j++) {
+            if (element.textContent.includes(searchTerms[j])) {
+                matched = true;
+                break;
+            }
+        }
+        if (matched) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+})();
